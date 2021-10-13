@@ -5,29 +5,32 @@ public class Emp_Wage {
 	static final int  PART_TIME = 2;
 	public static void main(String[] args) {
 		System.out.println("Welcome to EMPLOYEE WAGE COMPUTAION PROGRAM");
-		int Random = (int)Math.floor(Math.random()*10)%3;                 //GENERATING random values
+		int Random=(int)Math.floor(Math.random()*10) % 3;                 //GENERATING random values
 		int salary = 0;
 		int FullDayHour = 0;
 		int WagePerHour = 0;
-		if(Random == FULLTIME)                                           // checking presence with the help of if condition
+		switch (Random)                                // checking presence with the help of switch statement
 		{	
+		case FULLTIME:
+
 			FullDayHour = 8;
 			WagePerHour = 20;
 			System.out.print("Employee is full time and ");
-		}
-		                                                             // checking if employee is part time
-		else if(Random == PART_TIME) {
+			break;
+		case PART_TIME:
+
 			FullDayHour = 4;
 			WagePerHour = 20;
 			System.out.print("Employee is part time and ");
-		}
+			break;
 
-		else if (Random == 0) { 
+		default : 
+
 			FullDayHour = 0;
 			WagePerHour = 0;
 			System.out.print("Employee is absent and ");
-		}
-		salary += WagePerHour*FullDayHour;                             // calculating salary
+		}             
+		salary+= WagePerHour * FullDayHour;                             // calculating salary
 		System.out.println("his income is Rs."+salary);
 	}
 }
