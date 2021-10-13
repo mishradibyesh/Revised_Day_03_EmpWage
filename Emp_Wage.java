@@ -9,8 +9,10 @@ public class Emp_Wage {
 		int one_day = 0;
 		int FullDayHour = 0;
 		int WagePerHour = 0;
-
-		for(int i=1; i<=20;i++) {                                              //calculating income till day 20 using for loop
+		int TotalWorkingHour=0;
+		int day=1;
+		while(TotalWorkingHour <=100 && day <=20) {		      // putting a condition to check for maximum hour and day allowed
+      
 			int Random=(int)Math.floor(Math.random()*10) % 3;                 //GENERATING random values
 
 			switch (Random)                                                 // checking presence with the help of switch statement
@@ -35,9 +37,12 @@ public class Emp_Wage {
 				System.out.print("Employee is absent and ");
 			}             
 			one_day= WagePerHour * FullDayHour;                                          // calculating salary
-			System.out.println("his day "+i+" income is Rs."+one_day);                  // displaying daily earning
+			System.out.println("his day "+day+" income is Rs."+one_day);                  // displaying daily earning
 			Monthly_salary+= WagePerHour * FullDayHour;                                // calculating salary
+			TotalWorkingHour+=FullDayHour;
+			day++;
 		}
+		System.out.println("Employee's final working hour is  "+TotalWorkingHour); //printing the total working hour of employee
 		System.out.println("Employee's monthly Income is Rs. "+Monthly_salary);      // displaying monthly salary
 	}
 }
