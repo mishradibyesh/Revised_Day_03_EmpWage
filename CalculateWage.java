@@ -1,6 +1,6 @@
 package com.bl.empwage;
 
-public class CalculateWage {
+public class CalculateWage implements InterfaceEmpWage {
 	static final int FULLTIME = 1;
 	static final int  PART_TIME = 2;
 	String company;
@@ -46,6 +46,7 @@ public class CalculateWage {
 	public String toString() {
 		return "Calculated Wage [company=" + company + ", monthly_salary=" + monthly_salary + "]";
 	}
+	
 
 
 }
