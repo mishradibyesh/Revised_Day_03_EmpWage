@@ -26,7 +26,7 @@ public CalculateWage() {
 
 			FullDayHour = 4;
 			WagePerHour = 20;
-			System.out.print("Employee is part time and ");
+			System.out.print("Employee is Part time and ");
 			break;
 
 		default : 
@@ -35,9 +35,9 @@ public CalculateWage() {
 			WagePerHour = 0;
 			System.out.print("Employee is absent and ");
 		}             
-		one_day= WagePerHour * FullDayHour;                                          // calculating salary
+		one_day= WagePerHour * FullDayHour;                                          // calculating salary for one day
 		System.out.println("his day "+day+" income is Rs."+one_day);                  // displaying daily earning
-		Monthly_salary+= WagePerHour * FullDayHour;                                // calculating salary
+		Monthly_salary+= WagePerHour * FullDayHour ;                                // calculating salary
 		TotalWorkingHour+=FullDayHour;
 		day++;
 	}
