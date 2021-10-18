@@ -12,7 +12,7 @@ public CalculateWage() {
 	int day=1;
 	while(TotalWorkingHour <=100 && day <=20) {		      // putting a condition to check for maximum hour and day allowed
 
-		int Random=(int)Math.floor(Math.random()*10) % 3;                 //GENERATING random values
+		int Random=(int)Math.floor(Math.random()*10) % 3; //GENERATING numbers between 0 t0 2 for checking employee type
 
 		switch (Random)                                                 // checking presence with the help of switch statement
 		{	
