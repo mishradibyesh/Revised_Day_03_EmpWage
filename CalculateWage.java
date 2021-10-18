@@ -1,7 +1,5 @@
 package com.bl.empwage;
 
-import java.util.ArrayList;
-
 public class CalculateWage {
 	static final int FULLTIME = 1;
 	static final int  PART_TIME = 2;
@@ -43,11 +41,11 @@ public class CalculateWage {
 			day++;
 
 		}
-			}
+	}
 	@Override
 	public String toString() {
 		return "Calculated Wage [company=" + company + ", monthly_salary=" + monthly_salary + "]";
 	}
-	
+
 
 }
