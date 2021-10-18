@@ -1,47 +1,54 @@
 package com.bl.empwage;
 
+import java.util.ArrayList;
+
 public class CalculateWage {
 	static final int FULLTIME = 1;
 	static final int  PART_TIME = 2;
-public CalculateWage() {
-	int Monthly_salary = 0;
-	int one_day = 0;
-	int FullDayHour = 0;
-	int WagePerHour = 0;
-	int TotalWorkingHour=0;
+	String company;
+	int monthly_salary = 0;
+	int fullDayHour = 0;
+	int wagePerHour = 0;
+	int countWorkingHour=0;
+	int totalWorkingHour;
 	int day=1;
-	while(TotalWorkingHour <=100 && day <=20) {		      // putting a condition to check for maximum hour and day allowed
+	int totalDay;
+	public CalculateWage(String company , int wagePerHour , int totalDay, int totalWorkingHour) {
+		this.company = company;
+		this.totalDay = totalDay;
+		this.totalWorkingHour = totalWorkingHour;
+		this.wagePerHour = wagePerHour;
 
-		int Random=(int)Math.floor(Math.random()*10) % 3; //GENERATING numbers between 0 t0 2 for checking employee type
+		while(countWorkingHour <= totalWorkingHour && day < totalDay) {		      // putting a condition to check for maximum hour and day allowed
 
-		switch (Random)                                                 // checking presence with the help of switch statement
-		{	
-		case FULLTIME:
+			int Random=(int)Math.floor(Math.random()*10) % 3;                    //GENERATING numbers between 0 t0 2 for checking employee type
 
-			FullDayHour = 8;
-			WagePerHour = 20;
-			System.out.print("Employee is full time and ");
-			break;
-		case PART_TIME:
+			switch (Random)                                                   // checking presence with the help of switch statement
+			{	
+			case FULLTIME:
 
-			FullDayHour = 4;
-			WagePerHour = 20;
-			System.out.print("Employee is Part time and ");
-			break;
+				fullDayHour = 8;
+				break;
+			case PART_TIME:
 
-		default : 
+				fullDayHour = 4;
+				break;
 
-			FullDayHour = 0;
-			WagePerHour = 0;
-			System.out.print("Employee is absent and ");
-		}             
-		one_day= WagePerHour * FullDayHour;                                          // calculating salary for one day
-		System.out.println("his day "+day+" income is Rs."+one_day);                  // displaying daily earning
-		Monthly_salary+= WagePerHour * FullDayHour ;                                // calculating salary
-		TotalWorkingHour+=FullDayHour;
-		day++;
+			default : 
+
+				fullDayHour = 0;
+			}             
+			monthly_salary+= wagePerHour * fullDayHour ;                                // calculating salary for a month
+			countWorkingHour+=fullDayHour;
+			day++;
+
+		}
+
 	}
-	System.out.println("Employee's final working hour is  "+TotalWorkingHour); //printing the total working hour of employee
-	System.out.println("Employee's monthly Income is Rs. "+Monthly_salary);      // displaying monthly salary
-}
+	@Override
+	public String toString() {
+		return "Calculated Wage [company=" + company + ", monthly_salary=" + monthly_salary + "]";
+	}
+	
+
 }
