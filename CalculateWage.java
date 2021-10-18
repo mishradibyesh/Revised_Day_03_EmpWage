@@ -13,7 +13,7 @@ public class CalculateWage {
 	int totalWorkingHour;
 	int day=1;
 	int totalDay;
-	public CalculateWage(String company , int wagePerHour , int totalDay, int totalWorkingHour) {
+	public void EmpWageBuilder(String company , int wagePerHour , int totalDay, int totalWorkingHour) {
 		this.company = company;
 		this.totalDay = totalDay;
 		this.totalWorkingHour = totalWorkingHour;
@@ -43,8 +43,7 @@ public class CalculateWage {
 			day++;
 
 		}
-
-	}
+			}
 	@Override
 	public String toString() {
 		return "Calculated Wage [company=" + company + ", monthly_salary=" + monthly_salary + "]";
