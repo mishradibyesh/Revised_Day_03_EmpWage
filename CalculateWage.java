@@ -12,7 +12,7 @@ public CalculateWage() {
 	int day=1;
 	while(TotalWorkingHour <=100 && day <=20) {		      // putting a condition to check for maximum hour and day allowed
 
-		int Random=(int)Math.floor(Math.random()*10) % 3;                 //GENERATING random values
+		int Random=(int)Math.floor(Math.random()*10) % 3; //GENERATING numbers between 0 t0 2 for checking employee type
 
 		switch (Random)                                                 // checking presence with the help of switch statement
 		{	
@@ -26,7 +26,7 @@ public CalculateWage() {
 
 			FullDayHour = 4;
 			WagePerHour = 20;
-			System.out.print("Employee is part time and ");
+			System.out.print("Employee is Part time and ");
 			break;
 
 		default : 
@@ -35,9 +35,9 @@ public CalculateWage() {
 			WagePerHour = 0;
 			System.out.print("Employee is absent and ");
 		}             
-		one_day= WagePerHour * FullDayHour;                                          // calculating salary
+		one_day= WagePerHour * FullDayHour;                                          // calculating salary for one day
 		System.out.println("his day "+day+" income is Rs."+one_day);                  // displaying daily earning
-		Monthly_salary+= WagePerHour * FullDayHour;                                // calculating salary
+		Monthly_salary+= WagePerHour * FullDayHour ;                                // calculating salary
 		TotalWorkingHour+=FullDayHour;
 		day++;
 	}
