@@ -11,6 +11,7 @@ public class CalculateWage implements InterfaceEmpWage {
 	int totalWorkingHour;
 	int day=1;
 	int totalDay;
+	int dailyWage=0;
 	public void EmpWageBuilder(String company , int wagePerHour , int totalDay, int totalWorkingHour) {
 		this.company = company;
 		this.totalDay = totalDay;
@@ -35,7 +36,8 @@ public class CalculateWage implements InterfaceEmpWage {
 			default : 
 
 				fullDayHour = 0;
-			}             
+			}  
+			dailyWage = wagePerHour * fullDayHour;
 			monthly_salary+= wagePerHour * fullDayHour ;                                // calculating salary for a month
 			countWorkingHour+=fullDayHour;
 			day++;
